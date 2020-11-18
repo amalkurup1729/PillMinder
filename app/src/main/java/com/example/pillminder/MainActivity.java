@@ -14,6 +14,8 @@ public Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.setTitle("PillMinder");
+
         button = (Button) findViewById(R.id.startBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

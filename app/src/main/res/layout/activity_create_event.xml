@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainbackgroundimage"
+    android:orientation="vertical"
+    tools:context=".CreateEvent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_record"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_below="@id/tv_record"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_baseline_mic_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:text="Record Me To"
+            android:id="@+id/tv_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editext_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Message"
+        android:background="@android:color/white"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_time"
+        android:text="Select Time"
+        android:textAllCaps="false"
+        android:background="@color/purple_500"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:layout_marginHorizontal="25dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:textAllCaps="false"
+        android:background="@color/purple_500"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_date"
+        android:layout_marginHorizontal="25dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/btn_done"
+        android:text="Done"
+        android:background="@android:color/holo_purple"/>
+
+
+</LinearLayout>

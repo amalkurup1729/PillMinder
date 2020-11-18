@@ -29,6 +29,7 @@ public class PatientmainLogin extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
     private TextView forgotPassword;
+    private TextView switchuser2;
 
 
     @Override
@@ -36,12 +37,16 @@ public class PatientmainLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patientmain_login);
 
+        this.setTitle("Patient Login");
+
+
         Email = (EditText)findViewById(R.id.etEmail);
         Password = (EditText)findViewById(R.id.etPassword);
         Info = (TextView)findViewById(R.id.tvInfo);
         Login = (Button)findViewById(R.id.patientloginBtn);
         userRegistration = (TextView)findViewById(R.id.tvRegister);
         forgotPassword = (TextView)findViewById(R.id.tvForgotPassword);
+        switchuser2 = (TextView)findViewById(R.id.suser2);
 
         Info.setText("No of attempts remaining:5");
 
@@ -50,6 +55,13 @@ public class PatientmainLogin extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        switchuser2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PatientmainLogin.this, JunctionPage.class));
+            }
+        });
 
         if(user !=null){
             finish();
@@ -104,4 +116,8 @@ public class PatientmainLogin extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(PatientmainLogin.this, "Please click switch user !", Toast.LENGTH_SHORT).show();
+    }
 }

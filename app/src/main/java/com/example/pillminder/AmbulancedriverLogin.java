@@ -10,5 +10,7 @@ public class AmbulancedriverLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ambulancedriver_login);
+
+        this.setTitle("Driver Login");
     }
 }

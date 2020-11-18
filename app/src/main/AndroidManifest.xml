@@ -3,6 +3,8 @@
     package="com.example.pillminder">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PillMinder">
-        <activity android:name=".PasswordActivity"></activity>
+        <activity android:name=".NewsFeeds.Newsfeed"></activity>
+        <activity android:name=".GoogleMap.MapActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key"/>
+
+        <activity android:name=".NotificationMessage" />
+        <activity android:name=".CreateEvent" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".DoctorAccount" />
+        <activity android:name=".DoctorRegistration" />
+        <activity android:name=".PasswordActivity" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

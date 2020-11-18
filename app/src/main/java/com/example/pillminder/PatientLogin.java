@@ -30,6 +30,8 @@ public class PatientLogin extends AppCompatActivity {
         setContentView(R.layout.activity_patient_login);
         setupUIViews();
 
+        this.setTitle("Patient Register");
+
         firebaseAuth = FirebaseAuth.getInstance();
 
         regbutton.setOnClickListener(new View.OnClickListener() {

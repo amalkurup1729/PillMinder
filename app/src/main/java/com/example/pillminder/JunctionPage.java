@@ -13,6 +13,9 @@ public class JunctionPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_junction_page);
+
+        this.setTitle("Junction Page");
+
         button1 = findViewById(R.id.doctorBtn);
         button2 = findViewById(R.id.patientBtn);
         button3 = findViewById(R.id.ambulancedriverBtn);

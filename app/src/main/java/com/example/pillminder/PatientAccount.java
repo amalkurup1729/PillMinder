@@ -9,10 +9,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.pillminder.GoogleMap.MapActivity;
+import com.example.pillminder.NewsFeeds.Newsfeed;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class PatientAccount extends AppCompatActivity {
+    private Button setreminder;
+    private Button openmap;
+    private Button news;
     private FirebaseAuth firebaseAuth;
 
 
@@ -21,9 +27,40 @@ public class PatientAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_account);
 
+        this.setTitle("My Account");
+
         firebaseAuth = FirebaseAuth.getInstance();
+       setreminder = (Button)findViewById(R.id.reminderBtn);
+           openmap = (Button) findViewById(R.id.mapBtn);
+           news = (Button) findViewById(R.id.newsfeedBtn);
 
 
+           news.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(PatientAccount.this, Newsfeed.class);
+                   startActivity(intent);
+               }
+           });
+
+
+
+           openmap.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(PatientAccount.this, MapActivity.class);
+                   startActivity(intent);
+               }
+           });
+
+
+       setreminder.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(PatientAccount.this,MainActivity2.class);
+               startActivity(intent);
+           }
+       });
     }
 
     private  void Logout(){
@@ -46,5 +83,10 @@ public class PatientAccount extends AppCompatActivity {
             }
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(PatientAccount.this, "Please Logout from current account !", Toast.LENGTH_SHORT).show();
     }
 }
